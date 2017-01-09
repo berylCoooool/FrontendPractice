@@ -1,0 +1,43 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>CMS Dashboard Circle Chart</title>
+    <meta name="description" content="New Circle using D3">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/circle.css">
+  </head>
+  <style>
+
+
+
+</style>
+  <body ng-app="newCircleApp">
+      <section>
+	  <div ng-controller="newCircleCtrl">
+	
+	     
+        <div center >
+		<select ng-model="selectedCircle" ng-options="y.desc for (x, y) in circles">
+		</select>
+		</div>
+		<div>
+		<div class="page-header">
+			<h2>{{selectedCircle.desc}}</h2>
+		</div>
+        
+		<d3-circle data="selectedCircle.path">
+		<svg width="960" height="960"></svg>
+		</d3-circle>
+		<div>
+	  </div>
+      </section>
+  <script src="scripts/services/angular.min.js"></script>
+  <script src="scripts/newCircleApp.js"></script>
+  <script src="scripts/services/d3.js"></script>
+  <script src="scripts/controllers/newCircleCtrl.js"></script>
+  <script src="scripts/directives/d3Circle.js"></script>
+  <script src="scripts/directives/ui-bootstrap-tpls-2.3.1.min.js"></script>
+</body>
+ 
+ </html>
+  
